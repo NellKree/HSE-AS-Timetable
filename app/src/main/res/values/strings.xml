@@ -3,4 +3,5 @@
     <string name="Head">Timetable for HSE FE</string>
     <string name="tt_for_students">расписание для студентов</string>
     <string name="tt_for_teacher">расписание для преподавателя</string>
+    <string name="logo">logotype</string>
 </resources>
