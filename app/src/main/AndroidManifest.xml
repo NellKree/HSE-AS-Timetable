@@ -23,11 +23,11 @@
             </intent-filter>
         </activity>
         <activity android:name="StudentActivity"
-            android:screenOrientation="fullSensor">
+            android:screenOrientation="portrait">
 
         </activity>
         <activity android:name="TeacherActivity"
-            android:screenOrientation="fullSensor">
+            android:screenOrientation="portrait">
 
         </activity>
     </application>

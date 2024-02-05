@@ -10,17 +10,13 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
-
 
 public class TeacherActivity extends AppCompatActivity {
 
     protected TextView time, status, subject, cabinet, corp, teacher;
-    protected Date currentTime;
+
     protected Button btnDay;
     protected Button btnWeek;
     @Override
@@ -61,9 +57,8 @@ public class TeacherActivity extends AppCompatActivity {
             }
         });
 
-        initTime();
+        StudentActivity.initTime(time);
         initData();
-
 
     }
     private void initGroupList(List<Group> groups){
@@ -73,11 +68,7 @@ public class TeacherActivity extends AppCompatActivity {
         groups.add(new Group(4,"Болдырев Алексей Сергеевич"));
         groups.add(new Group(5,"Брюхина Евгения Рафиковна"));
     }
-    private void initTime(){
-        currentTime = new Date();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());
-        time.setText(simpleDateFormat.format(currentTime));
-    }
+
     private void initData(){
         status.setText("Нет пар");
         subject.setText("Дисциплина");

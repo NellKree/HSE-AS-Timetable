@@ -28,7 +28,7 @@
             android:layout_marginTop="20dp"
             android:paddingStart="20dp"
             android:text="@string/choose_teacher_label"
-            style="@style/ScheduleTitle"
+            android:textAppearance="@style/HSE.Labels"
             tools:ignore="RtlSymmetry" />
 
         <Spinner
