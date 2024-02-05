@@ -43,7 +43,6 @@ public class StudentActivity extends AppCompatActivity {
         initGroupList(groups, "БИ", 20, 2);
         initGroupList(groups, "Ю", 21, 2);
 
-
         ArrayAdapter<?> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, groups);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
