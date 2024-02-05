@@ -6,4 +6,7 @@
     <color name="colorPrimaryVariant">#011F5A</color>
     <color name="colorSecondary">#4080ff</color>
     <color name="colorSecondaryVariant">#0C5DFD</color>
+    <color name="very_dark_gray">#9d9d9c</color>
+    <color name="dark_gray">#d0d0d0</color>
+    <color name="light_gray">#ededed</color>
 </resources>

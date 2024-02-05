@@ -2,11 +2,9 @@ package org.hse.basetimetable;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
-
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,19 +14,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        View button1 = findViewById(R.id.button1);
-        View button2 = findViewById(R.id.button2);
+        View buttonStudent = findViewById(R.id.buttonStudent);
+        View buttonTeacher = findViewById(R.id.buttonTeacher);
 
-        button1.setOnClickListener(v -> clickButton1());
+        buttonStudent.setOnClickListener(v -> clickButtonStudent());
 
-        button2.setOnClickListener(v -> clickButton2());
+        buttonTeacher.setOnClickListener(v -> clickButtonTeacher());
     }
 
-    private void clickButton1(){
-        Toast.makeText(this, "Расписание для студентов", Toast.LENGTH_SHORT).show();
+    private void clickButtonStudent(){
+        //Toast.makeText(this, "Расписание для студентов", Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(this, StudentActivity.class);
+        startActivity(intent);
     }
 
-    private void clickButton2(){
-        Toast.makeText(this, "Расписание для преподавателя", Toast.LENGTH_SHORT).show();
+    private void clickButtonTeacher(){
+        //Toast.makeText(this, "Расписание для преподавателя", Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(this, TeacherActivity.class);
+        startActivity(intent);
     }
 }

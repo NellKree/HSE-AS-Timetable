@@ -1,7 +1,13 @@
 <resources>
-    <string name="app_name">BaseTimetable</string>
+    <string name="app_name">Timetable HSE</string>
     <string name="Head">Timetable for HSE FE</string>
-    <string name="tt_for_students">расписание для студентов</string>
-    <string name="tt_for_teacher">расписание для преподавателя</string>
-    <string name="logo">logotype</string>
+    <string name="tt_for_students">Расписание для студентов</string>
+    <string name="tt_for_teacher">Расписание для преподавателя</string>
+    <string name="logo">HSE logo</string>
+
+    <string name="timetable_day_label">Расписание\nна день</string>
+    <string name="timetable_week_label">Расписание\nна неделю</string>
+    <string name="choose_group_label">Выберите группу:</string>
+    <string name="choose_teacher_label">Выберите преподавателя:</string>
+    <string name="now">Сейчас:</string>
 </resources>
