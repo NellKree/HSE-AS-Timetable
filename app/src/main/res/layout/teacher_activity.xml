@@ -37,7 +37,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
             android:background="@color/white"
-            android:paddingStart="20dp"
+            android:paddingStart="15dp"
             android:popupBackground="@color/white"
             android:spinnerMode="dropdown"
             tools:ignore="RtlSymmetry,SpeakableTextPresentCheck" />
