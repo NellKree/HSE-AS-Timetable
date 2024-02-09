@@ -49,7 +49,7 @@
             android:layout_marginTop="20dp"
             android:paddingStart="20dp"
             android:text="@string/now"
-            style="@style/MyText"
+            style="@style/HSE.Labels"
             tools:ignore="RtlSymmetry" />
 
         <TextView

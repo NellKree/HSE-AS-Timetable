@@ -1,4 +1,4 @@
-package org.hse.basetimetable;
+package org.hse.android;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +10,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import org.hse.basetimetable.R;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -83,16 +85,16 @@ public class StudentActivity extends AppCompatActivity {
         SimpleDateFormat dayFormat = new SimpleDateFormat("EEEE", new Locale("ru"));
         String formattedDay = dayFormat.format(currentTime);
 
-        String result = formattedTime + ", " + formattedDay;
+        String result =  formattedTime + ", " + formattedDay;
 
         time.setText(result);
     }
 
     private void initData(){
-        status.setText("Нет пар");
-        subject.setText("Дисциплина");
-        cabinet.setText("Кабинет");
-        corp.setText("Корпус");
-        teacher.setText("Преподаватель");
+        status.setText(getString(R.string.status));
+        subject.setText(getString(R.string.subject));
+        cabinet.setText(getString(R.string.cabinet));
+        corp.setText(getString(R.string.corp));
+        teacher.setText(getString(R.string.teacher));
     }
 }

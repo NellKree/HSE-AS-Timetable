@@ -1,4 +1,4 @@
-package org.hse.basetimetable;
+package org.hse.android;
 
 public class Group {
     private Integer id;

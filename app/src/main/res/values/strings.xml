@@ -10,4 +10,12 @@
     <string name="choose_group_label">Выберите группу:</string>
     <string name="choose_teacher_label">Выберите преподавателя:</string>
     <string name="now">Сейчас:</string>
+
+
+    <string name="status">Нет пар</string>
+    <string name="subject">Дисциплина</string>
+    <string name="cabinet">Корпус</string>
+    <string name="corp">Кабинет</string>
+    <string name="teacher">Преподаватель</string>
+
 </resources>

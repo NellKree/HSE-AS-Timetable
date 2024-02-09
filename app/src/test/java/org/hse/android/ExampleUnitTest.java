@@ -1,4 +1,4 @@
-package org.hse.basetimetable;
+package org.hse.android;
 
 import org.junit.Test;
 

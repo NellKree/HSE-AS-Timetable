@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:orientation="vertical"
-    tools:context=".StudentActivity">
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -49,7 +48,7 @@
             android:layout_marginTop="20dp"
             android:paddingStart="20dp"
             android:text="@string/now"
-            style="@style/MyText"
+            style="@style/HSE.Labels"
             tools:ignore="RtlSymmetry" />
 
         <TextView
