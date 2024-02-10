@@ -84,7 +84,7 @@ public class StudentActivity extends AppCompatActivity {
 
         SimpleDateFormat dayFormat = new SimpleDateFormat("EEEE", new Locale("ru"));
         String formattedDay = dayFormat.format(currentTime);
-
+        formattedDay = formattedDay.substring(0,1).toUpperCase() + formattedDay.substring(1);
         String result =  formattedTime + ", " + formattedDay;
 
         time.setText(result);
