@@ -40,62 +40,70 @@
             android:popupBackground="@color/white"
             android:spinnerMode="dropdown"
             tools:ignore="RtlSymmetry,SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/time"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
             android:layout_marginTop="20dp"
-            android:paddingStart="20dp"
-            android:text="@string/now"
-            style="@style/HSE.Labels"
-            tools:ignore="RtlSymmetry" />
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <TextView
+                android:id="@+id/timeNow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/now"
+                style="@style/HSE.BaseText"/>
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Пятница"
+                style="@style/HSE.Labels"/>
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/status"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
-            android:layout_marginTop="20dp"
-            android:paddingStart="20dp"
-            tools:ignore="RtlSymmetry"
-            style="@style/MyText"/>
+
+            tools:text="Нет пар"
+            style="@style/HSE.BaseText"/>
 
         <TextView
             android:id="@+id/subject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:paddingStart="20dp"
-            tools:ignore="RtlSymmetry"
-            style="@style/MyText"/>
+
+            tools:text="Дисциплина"
+
+            style="@style/HSE.BaseText"/>
 
         <TextView
             android:id="@+id/cabinet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:paddingStart="20dp"
-            tools:ignore="RtlSymmetry"
-            style="@style/MyText"/>
+
+            tools:text="Корпус"
+
+            style="@style/HSE.BaseText"/>
 
         <TextView
             android:id="@+id/corp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:paddingStart="20dp"
-            tools:ignore="RtlSymmetry"
-            style="@style/MyText"/>
+
+            tools:text="Кабинет"
+            style="@style/HSE.BaseText"/>
 
         <TextView
             android:id="@+id/teacher"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:paddingStart="20dp"
-            tools:ignore="RtlSymmetry"
-            style="@style/MyText"/>
+            tools:text="Преподаватель"
+            style="@style/HSE.BaseText"/>
 
         <LinearLayout
             android:layout_width="match_parent"
