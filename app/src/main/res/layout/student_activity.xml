@@ -40,61 +40,63 @@
             android:popupBackground="@color/white"
             android:spinnerMode="dropdown"
             tools:ignore="RtlSymmetry,SpeakableTextPresentCheck" />
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
+            android:layout_height="match_parent"
+
             android:layout_marginTop="20dp"
             android:orientation="horizontal"
             android:showDividers="middle">
 
             <TextView
                 android:id="@+id/timeNow"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/HSE.BaseText"
+                android:layout_width="170dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
                 android:text="@string/now"
-                style="@style/HSE.BaseText"/>
+                 />
+
             <TextView
                 android:id="@+id/time"
+                style="@style/HSE.Labels"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:text="Пятница"
-                style="@style/HSE.Labels"/>
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                tools:text="Пятница" />
+
 
         </LinearLayout>
 
         <TextView
             android:id="@+id/status"
+            style="@style/HSE.BaseText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp"
 
-            tools:text="Нет пар"
-            style="@style/HSE.BaseText"/>
+            tools:text="Нет пар" />
 
         <TextView
             android:id="@+id/subject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             tools:text="Дисциплина"
-
             style="@style/HSE.BaseText"/>
 
         <TextView
             android:id="@+id/cabinet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             tools:text="Корпус"
-
             style="@style/HSE.BaseText"/>
 
         <TextView
             android:id="@+id/corp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             tools:text="Кабинет"
             style="@style/HSE.BaseText"/>
 
@@ -104,7 +106,6 @@
             android:layout_height="wrap_content"
             tools:text="Преподаватель"
             style="@style/HSE.BaseText"/>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -112,7 +113,6 @@
             android:layout_marginTop="20dp"
             android:orientation="horizontal"
             android:showDividers="middle">
-
             <Button
                 android:id="@+id/button_day"
                 android:layout_width="match_parent"
