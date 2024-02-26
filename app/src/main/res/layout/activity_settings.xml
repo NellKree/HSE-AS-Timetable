@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <TableLayout
+        android:id="@+id/info_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:stretchColumns="*"
+        app:layout_constraintBottom_toTopOf="@+id/save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settingsPhotoText"
+                    style="@style/HSE.BaseBaseText"/>
+
+                <ImageView
+                    android:id="@+id/userPhoto"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    app:srcCompat="@drawable/ava" />
+
+                <Button
+                    android:id="@+id/uploadPhoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/btnPhotoSelect"
+                    style="@style/HSEButtonStyle"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/name"
+                    style="@style/HSE.BaseBaseText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/black"
+                    android:hint="@string/settingsHintName"
+                    android:textColorHint="@color/dark_gray"
+                    tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+                <TextView
+                    style="@style/HSE.Labels"
+                    android:text="@string/settingsLightLevelText" />
+
+                <TextView
+                    android:id="@+id/lightLevel"
+                    style="@style/HSE.BaseText2" />
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/save"
+        android:text="@string/btnSave"
+        app:layout_constraintBottom_toTopOf="@+id/allSensorsLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/HSEButtonStyle2"/>
+
+    <TextView
+        android:id="@+id/allSensorsLabel"
+        style="@style/HSE.Labels"
+        android:paddingStart = "20dp"
+        android:text="@string/settings_all_sensors"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/save" />
+
+    <TextView
+        android:id="@+id/allSensors"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        style="@style/HSE.BaseBaseText"
+        android:layout_margin="20dp"
+        android:layout_marginBottom="385dp"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbars="vertical"
+        android:verticalScrollbarPosition="right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/allSensorsLabel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

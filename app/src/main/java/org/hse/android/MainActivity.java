@@ -17,10 +17,13 @@ public class MainActivity extends AppCompatActivity {
 
         View buttonStudent = findViewById(R.id.buttonStudent);
         View buttonTeacher = findViewById(R.id.buttonTeacher);
+        View buttonSetting = findViewById(R.id.btnSettings);
 
         buttonStudent.setOnClickListener(v -> clickButtonStudent());
 
         buttonTeacher.setOnClickListener(v -> clickButtonTeacher());
+
+        buttonSetting.setOnClickListener(v -> clickButtonSetting());
     }
 
     private void clickButtonStudent(){
@@ -34,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
         //Toast.makeText(this, "Расписание для преподавателя", Toast.LENGTH_SHORT).show();
 
         Intent intent = new Intent(this, TeacherActivity.class);
+        startActivity(intent);
+    }
+    private void clickButtonSetting(){
+
+        Intent intent = new Intent(this, SettingsActivity.class);
         startActivity(intent);
     }
 }

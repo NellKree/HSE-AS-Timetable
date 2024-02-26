@@ -18,4 +18,15 @@
     <string name="corp">Кабинет</string>
     <string name="teacher">Преподаватель</string>
 
+    <string name="btnSettings">Настройки</string>
+    <string name="settingsHintName">Укажите ваше имя</string>
+    <string name="settingsLightLevelText">Текущая освещенность:</string>
+    <string name="settingsPhotoText">Укажите фото:</string>
+    <string name="settings_all_sensors">Все датчики:</string>
+    <string name="btnSave">Сохранить</string>
+    <string name="btnPhotoSelect">Сделать фото</string>
+    <string name="saved_message">Сохранено</string>
+    <string name="ask_photo_permits">Для снятия фото нужно предоставить права на фото</string>
+
+
 </resources>

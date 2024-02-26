@@ -33,30 +33,27 @@
 
     <Button
         android:id="@+id/buttonStudent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginEnd="70dp"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/colorPrimary"
+        style="@style/HSEButtonStyle2"
         android:contentDescription="@string/tt_for_students"
         android:text="@string/tt_for_students"
-        android:textColor="@color/white"
-        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonTeacher"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonTeacher"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:backgroundTint="@color/colorPrimary"
         android:contentDescription="@string/tt_for_teacher"
         android:text="@string/tt_for_teacher"
-        android:textColor="@color/white"
-        android:textSize="16sp"
+        style="@style/HSEButtonStyle2"
+        app:layout_constraintBottom_toTopOf="@+id/btnSettings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnSettings"
+        android:contentDescription="@string/btnSettings"
+        android:text="@string/btnSettings"
+        style="@style/HSEButtonStyle2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
