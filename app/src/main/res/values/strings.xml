@@ -27,6 +27,7 @@
     <string name="btnPhotoSelect">Сделать фото</string>
     <string name="saved_message">Сохранено</string>
     <string name="ask_photo_permits">Для снятия фото нужно предоставить права на фото</string>
-
-
+    <string name="lux">" lux"</string>
+    <string name="avatar">" avatar"</string>
+    <string name="name">" name"</string>
 </resources>

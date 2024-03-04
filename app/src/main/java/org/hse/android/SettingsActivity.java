@@ -59,7 +59,7 @@ public class SettingsActivity extends AppCompatActivity implements SensorEventLi
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         light = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
         sensorLight = findViewById(R.id.lightLevel);
-        sensorLight.setText("0 lux");
+        sensorLight.setText(0 + getString(R.string.lux));
 
         nameEdit = findViewById(R.id.name);
         getName();
@@ -102,7 +102,7 @@ public class SettingsActivity extends AppCompatActivity implements SensorEventLi
     @Override
     public void onSensorChanged(SensorEvent event) {
         float lux = event.values[0];
-        sensorLight.setText(lux + " lux");
+        sensorLight.setText(lux + getString(R.string.lux));
     }
 
     @Override
@@ -132,14 +132,14 @@ public class SettingsActivity extends AppCompatActivity implements SensorEventLi
     }
 
     private void getName() {
-        String name = preferenceManager.getValue("name", "");
+        String name = preferenceManager.getValue(getString(R.string.name), "");
         if (!name.isEmpty()) {
             nameEdit.setText(name);
         }
     }
 
     private void getPhoto() {
-        String uri = preferenceManager.getValue("avatar", "");
+        String uri = preferenceManager.getValue(getString(R.string.avatar), "");
         if (!uri.isEmpty()) {
             photoURI = Uri.parse(uri);
             userPhoto.setImageURI(photoURI);
@@ -148,9 +148,9 @@ public class SettingsActivity extends AppCompatActivity implements SensorEventLi
 
     private void save() {
         if (nameEdit.getText() != null)
-            preferenceManager.saveValue("name", nameEdit.getText().toString());
+            preferenceManager.saveValue(getString(R.string.name), nameEdit.getText().toString());
         if (photoURI != null)
-            preferenceManager.saveValue("avatar", photoURI.toString());
+            preferenceManager.saveValue(getString(R.string.avatar), photoURI.toString());
         Toast.makeText(getApplicationContext(), getString(R.string.saved_message), Toast.LENGTH_SHORT).show();
     }
 
