@@ -1,5 +1,7 @@
 package org.hse.android;
 
+import static java.lang.String.format;
+
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
@@ -59,8 +61,7 @@ public class SettingsActivity extends AppCompatActivity implements SensorEventLi
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         light = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
         sensorLight = findViewById(R.id.lightLevel);
-        sensorLight.setText(0 + getString(R.string.lux));
-
+        sensorLight.setText(getString(R.string.lux, 0.00));
         nameEdit = findViewById(R.id.name);
         getName();
 
@@ -102,7 +103,7 @@ public class SettingsActivity extends AppCompatActivity implements SensorEventLi
     @Override
     public void onSensorChanged(SensorEvent event) {
         float lux = event.values[0];
-        sensorLight.setText(lux + getString(R.string.lux));
+        sensorLight.setText(getString(R.string.lux, lux));
     }
 
     @Override
