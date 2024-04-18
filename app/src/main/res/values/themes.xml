@@ -60,5 +60,9 @@
         <item name="android:layout_weight">1</item>
         <item name="android:lines">2</item>
     </style>
-
+    <style name="HSE.Title" parent="HSE.Size">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
 </resources>

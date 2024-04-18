@@ -30,4 +30,7 @@
     <string name="lux">%1$.2f lux</string>
     <string name="avatar">" avatar"</string>
     <string name="name">" name"</string>
+
+    <string name="studentType">student</string>
+    <string name="teacherType">teacher</string>
 </resources>

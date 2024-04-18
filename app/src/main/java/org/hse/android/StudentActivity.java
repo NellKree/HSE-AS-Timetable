@@ -1,100 +1,80 @@
 package org.hse.android;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import org.hse.basetimetable.R;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
-public class StudentActivity extends AppCompatActivity {
+public class StudentActivity extends BaseActivity {
 
-    protected TextView time, status, subject, cabinet, corp, teacher;
-    protected Button btnDay;
-    protected Button btnWeek;
+    private TextView timeLabel, timeValue, status, subject, cabinet, corp, teacher;
+
+    Spinner spinner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.student_activity);
 
-        final Spinner spinner = findViewById(R.id.groupList);
-        time = findViewById(R.id.time);
+        timeLabel = findViewById(R.id.timeNow);
+        timeValue = findViewById(R.id.timeS);
         status = findViewById(R.id.status);
         subject = findViewById(R.id.subject);
         cabinet = findViewById(R.id.cabinet);
         corp = findViewById(R.id.corp);
         teacher = findViewById(R.id.teacher);
-        btnDay = findViewById(R.id.button_day);
-        btnWeek = findViewById(R.id.button_week);
-        List<Group> groups = new ArrayList<>();
+        spinner = findViewById(R.id.groupList);
 
+        List<Group> groups = new ArrayList<>();
         initGroupList(groups, "ПИ", 21, 3);
         initGroupList(groups, "БИ", 20, 2);
         initGroupList(groups, "Ю", 21, 2);
 
         ArrayAdapter<?> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, groups);
-        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinner.setAdapter(adapter);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            public void onItemSelected(AdapterView<?> parent,
-                                       View itemSelected, int selectedItemPosition, long selectedId) {
-                Object item = adapter.getItem(selectedItemPosition);
-                ((TextView) parent.getChildAt(0)).setTextColor(getColor(R.color.black));
-                ((TextView) parent.getChildAt(0)).setTextSize(20);
-                Log.d("TAG", "selectedItem" + item);
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Object item = adapter.getItem(position);
             }
 
+            @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                //
+
             }
         });
 
-        initTime(time);
+        initTime(getString(R.string.studentType));
         initData();
 
+        View scheduleDay = findViewById(R.id.button_day);
+        scheduleDay.setOnClickListener(v -> showSchedule(ScheduleType.DAY));
+        View scheduleWeek = findViewById(R.id.button_week);
+        scheduleWeek.setOnClickListener(v -> showSchedule(ScheduleType.WEEK));
     }
+
+    private void showSchedule(ScheduleType type) {
+        Object selectedItem = spinner.getSelectedItem();
+        if (!(selectedItem instanceof Group)) {
+            return;
+        }
+        showScheduleImpl(ScheduleMode.STUDENT, type, (Group) selectedItem);
+    }
+
     private void initGroupList(List<Group> groups, String program, int admissionYear, int numberOfGroups) {
         for (int i = 1; i <= numberOfGroups; i++) {
             String groupName = program + "-" + admissionYear + "-" + i;
             groups.add(new Group(i, groupName));
         }
-    }
-
-    public static void initTime(TextView time) {
-        Calendar calendar = Calendar.getInstance();
-        Date currentTime = calendar.getTime();
-
-        SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());
-        String formattedTime = timeFormat.format(currentTime);
-
-        SimpleDateFormat dayFormat = new SimpleDateFormat("EEEE", new Locale("ru"));
-        String formattedDay = dayFormat.format(currentTime);
-        formattedDay = formattedDay.substring(0,1).toUpperCase() + formattedDay.substring(1);
-        String result =  formattedTime + ", " + formattedDay;
-
-        time.setText(result);
-    }
-
-    private void initData(){
-        status.setText(getString(R.string.status));
-        subject.setText(getString(R.string.subject));
-        cabinet.setText(getString(R.string.cabinet));
-        corp.setText(getString(R.string.corp));
-        teacher.setText(getString(R.string.teacher));
     }
 }
