@@ -39,14 +39,16 @@ public class TeacherActivity extends BaseActivity {
         initGroupList(groups);
 
         ArrayAdapter<?> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, groups);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
         spinner.setAdapter(adapter);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Object item = adapter.getItem(position);
+            public void onItemSelected(AdapterView<?> parent, View view, int selectedItemPosition, long id) {
+                Object item = adapter.getItem(selectedItemPosition);
+                ((TextView) parent.getChildAt(0)).setTextColor(getColor(R.color.black));
+                ((TextView) parent.getChildAt(0)).setTextSize(20);
             }
 
             @Override
