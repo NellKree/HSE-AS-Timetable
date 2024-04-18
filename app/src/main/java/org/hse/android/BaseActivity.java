@@ -87,6 +87,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
+
     protected void showScheduleImpl(ScheduleMode mode, ScheduleType type, Group group) {
         Intent intent = new Intent(this, ScheduleActivity.class);
         intent.putExtra(ScheduleActivity.ARG_ID, group.getId());
