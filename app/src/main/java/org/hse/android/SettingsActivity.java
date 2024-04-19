@@ -46,6 +46,8 @@ public class SettingsActivity extends AppCompatActivity implements SensorEventLi
 
     private PreferenceManager preferenceManager;
 
+    private static final String AVA = "avatar";
+    private static final String NAME = "name";
     private static final String TAG = "SettingsActivity";
     private static final String PERMISSION = "android.permission.CAMERA";
     private static final Integer REQUEST_PERMISSION_CODE = 1;
@@ -132,14 +134,14 @@ public class SettingsActivity extends AppCompatActivity implements SensorEventLi
     }
 
     private void getName() {
-        String name = preferenceManager.getValue(getString(R.string.name), "");
+        String name = preferenceManager.getValue(NAME, "");
         if (!name.isEmpty()) {
             nameEdit.setText(name);
         }
     }
 
     private void getPhoto() {
-        String uri = preferenceManager.getValue(getString(R.string.avatar), "");
+        String uri = preferenceManager.getValue(AVA, "");
         if (!uri.isEmpty()) {
             photoURI = Uri.parse(uri);
             userPhoto.setImageURI(photoURI);
@@ -148,9 +150,9 @@ public class SettingsActivity extends AppCompatActivity implements SensorEventLi
 
     private void save() {
         if (nameEdit.getText() != null)
-            preferenceManager.saveValue(getString(R.string.name), nameEdit.getText().toString());
+            preferenceManager.saveValue(NAME, nameEdit.getText().toString());
         if (photoURI != null)
-            preferenceManager.saveValue(getString(R.string.avatar), photoURI.toString());
+            preferenceManager.saveValue(AVA, photoURI.toString());
         Toast.makeText(getApplicationContext(), getString(R.string.saved_message), Toast.LENGTH_SHORT).show();
     }
 

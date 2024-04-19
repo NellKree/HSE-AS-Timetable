@@ -52,6 +52,9 @@ public class ScheduleActivity extends AppCompatActivity {
         serverTime = findViewById(R.id.schTitle2);
         setServerTime();
         initData();
+
+        List list = new ArrayList<>();
+        list.add(new Object());
     }
 
     private void setTitle() {
