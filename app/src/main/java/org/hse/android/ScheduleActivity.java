@@ -43,13 +43,7 @@ public class ScheduleActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.timetable_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
-        OnItemClick onItemClick = new OnItemClick() {
-            @Override
-            public void onClick(ScheduleItem data) {
-
-            }
-        };
-        adapter = new ItemAdapter(onItemClick);
+        adapter = new ItemAdapter();
         recyclerView.setAdapter(adapter);
         initData();
 

@@ -53,19 +53,15 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
         getTime();
     }
-
-
+    
     private void showTime(Date dateTime) {
         if (dateTime == null) {
             return;
         }
         currentTime = dateTime;
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm, EEEE",
-                Locale.getDefault());
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm, EEEE",Locale.getDefault());
         String[] dateSplit = simpleDateFormat.format(currentTime).split(" ");
-        String timeText = dateSplit[0] + " " +
-                dateSplit[1].substring(0,1).toUpperCase() +
-                dateSplit[1].substring(1);
+        String timeText = dateSplit[0] + " " + dateSplit[1].substring(0,1).toUpperCase() + dateSplit[1].substring(1);
         time.setText(timeText);
     }
 
@@ -86,7 +82,6 @@ public abstract class BaseActivity extends AppCompatActivity {
             Log.e(TAG,"",e);
         }
     }
-
 
     protected void showScheduleImpl(ScheduleMode mode, ScheduleType type, Group group) {
         Intent intent = new Intent(this, ScheduleActivity.class);

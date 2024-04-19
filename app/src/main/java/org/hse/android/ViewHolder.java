@@ -10,7 +10,6 @@ import org.hse.basetimetable.R;
 
 public class ViewHolder extends RecyclerView.ViewHolder {
     private final Context context;
-    private final OnItemClick onItemClick;
     private final TextView start;
     private final TextView end;
     private final TextView type;
@@ -18,10 +17,9 @@ public class ViewHolder extends RecyclerView.ViewHolder {
     private final TextView place;
     private final TextView teacher;
 
-    public ViewHolder(View itemView, Context context, OnItemClick onItemClick) {
+    public ViewHolder(View itemView, Context context) {
         super(itemView);
         this.context = context;
-        this.onItemClick = onItemClick;
         start = itemView.findViewById(R.id.start);
         end = itemView.findViewById(R.id.finish);
         type = itemView.findViewById(R.id.type);

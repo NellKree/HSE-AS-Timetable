@@ -20,7 +20,7 @@
 
     <TextView
         android:id="@+id/schTitle2"
-        style="@style/HSE.Title"
+        style="@style/HSE.Labels"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

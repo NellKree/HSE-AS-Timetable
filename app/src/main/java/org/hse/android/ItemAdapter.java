@@ -18,10 +18,6 @@ public class ItemAdapter extends
     private final static int TYPE_ITEM = 0;
     private final static int TYPE_HEADER = 1;
     private List<ScheduleItem> dataList = new ArrayList<>();
-    private final OnItemClick onItemClick;
-    public ItemAdapter(OnItemClick onItemClick) {
-        this.onItemClick = onItemClick;
-    }
 
     @NonNull
     @Override
@@ -31,10 +27,10 @@ public class ItemAdapter extends
 
         if (viewType == TYPE_ITEM) {
             View contactView = inflater.inflate(R.layout.item_schedule, parent, false);
-            return new ViewHolder(contactView, context, onItemClick);
+            return new ViewHolder(contactView, context);
         } else if (viewType == TYPE_HEADER) {
             View contactView = inflater.inflate(R.layout.item_schedule_header, parent, false);
-            return new ViewHolderHeader(contactView,context, onItemClick);
+            return new ViewHolderHeader(contactView,context);
         }
 
         try {
